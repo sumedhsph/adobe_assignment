@@ -49,17 +49,20 @@
               <div class="productdisplay__filter--label">Filters</div>
               <div class="productdisplay__search">
                 <input type="text" id="search" placeholder="search" aria-label="Search products" />
-                <Button id="searchButton">Search</Button>
+                <button id="searchButton" class="productdisplay__search--button">Search</button>
               </div>
               <div class="productdisplay__category">
                 Categories
               </div>
+              <ul id="categoryCheckboxes">
+
+              </ul>
             </div>
           </aside>
           <div class="productdisplay__products">
             <div class="productdisplay__header">
               <div class="productdisplay__products--count">
-                <span id="productCounts">33</span> Results
+                <span id="productCounts">0</span> Results
               </div>
               <div class="productdisplay__products--sort">
                 <select id="sort" title="sort products">
@@ -80,7 +83,7 @@
         
       </div>
     </main>
-    <button id="load-more">Load More</button>
+     
     <script src="js/script.js"></script>
   </body>
 </html>
