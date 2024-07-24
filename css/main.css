@@ -336,7 +336,7 @@ header input {
   }
 }
 /* Responsive style for mobile to tablet */
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
   .footer__main {
     flex-direction: column;
   }
@@ -444,7 +444,7 @@ header input {
   }
 }
 
-@media  (min-width: 320px) {
+@media  (min-width: 300px) and (max-width: 600px) {
   .banner__heading h1 {
     max-width: 75%;
   }
