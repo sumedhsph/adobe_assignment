@@ -6,57 +6,83 @@
     <title>Product Listing Page</title>
     <link rel="stylesheet" href="https://use.typekit.net/jlp7kpw.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/shimmer.css" />
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="mainheader container">
+        <div class="mainheader__bar">
+          <button id="navbar-toggle">&#9776;</button>
+        </div>
         <div class="mainheader__logo">
           <a href="#"><img src="images/logo.png" alt="Venia Logo" /></a>
         </div>
-        <nav class="mainheader__navbar">
-          <ul>
+        <nav id="navbar" >
+          <ul class="mainheader__navbar">
             <li><a href="#" title="home">home</a></li>
-          <li><a href="#" title="women">Women</a></li>
-          <li><a href="#" title="men">Men</a></li>
-          <li><a href="#" title="smart gear">smart gear</a></li>
-          <li><a href="#" title="Accessories">Accessories</a></li>
+            <li><a href="#" title="women">Women</a></li>
+            <li><a href="#" title="men">Men</a></li>
+            <li><a href="#" title="smart gear">smart gear</a></li>
+            <li><a href="#" title="Accessories">Accessories</a></li>
           </ul>
         </nav>
         <div class="mainheader__cart">cart</div>
       </div>
+      
     </header>
+
     <main>
       <section class="banner">
         <div class="banner__heading page__h1"><h1>men's outerwear</h1></div>
         <div class="banner_image">
-          <img
-            src="images/banner1.webp"
-            alt="Image representing Men's oouterwear"
-          />
+          <picture>
+            <source
+              srcset="images/banner1-small.webp"
+              media="(max-width: 768px)"
+            />
+            <source srcset="images/banner1.webp" media="(min-width: 769px)" />
+            <img
+              src="images/banner1.webp"
+              alt="Image representing Men's outerwear"
+            />
+          </picture>
         </div>
       </section>
 
-      <section class="container">
+      <section class="product__section container">
         <div class="productdisplay">
           <aside class="productdisplay__aside">
             <div class="productdisplay__breadcrumbs">
-              <a href="#" class="productdisplay__links" title="clothing">clothing</a> /
-              <a href="#" class="productdisplay__links" title="men's's">men's's</a> /
+              <a href="#" class="productdisplay__links" title="clothing"
+                >clothing</a
+              >
+              /
+              <a href="#" class="productdisplay__links" title="men's's"
+                >men's's</a
+              >
+              /
               <a href="#" class="productdisplay__links--active" title="Outwear"
-                >Outwear</a>
+                >Outwear</a
+              >
             </div>
             <div class="productdisplay__filter">
               <div class="productdisplay__filter--label">Filters</div>
               <div class="productdisplay__search">
-                <input type="text" id="search" placeholder="search" aria-label="Search products" />
-                <button id="searchButton" class="productdisplay__search--button">Search</button>
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="search"
+                  aria-label="Search products"
+                />
+                <button
+                  id="searchButton"
+                  class="productdisplay__search--button"
+                >
+                  Search
+                </button>
               </div>
-              <div class="productdisplay__category">
-                Categories
-              </div>
-              <ul id="categoryCheckboxes">
-
-              </ul>
+              <div class="productdisplay__category">Categories</div>
+              <ul id="categoryCheckboxes" class="filters"></ul>
             </div>
           </aside>
           <div class="productdisplay__products">
@@ -75,15 +101,67 @@
               <section id="products">
                 <!-- Products will be dynamically inserted here -->
               </section>
+              <div id="loading">
+                <div class="loading__card">
+                  <div class="shimmerBG media"></div>
+                  <div class="p-32">
+                    <div class="shimmerBG title-line"></div>
+                    <div class="shimmerBG title-line end"></div>
+                    <div class="shimmerBG content-line m-t-24"></div>
+                    <div class="shimmerBG content-line"></div>
+                    <div class="shimmerBG content-line"></div>
+                    <div class="shimmerBG content-line"></div>
+                    <div class="shimmerBG content-line end"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="loadbtn">
+                <button class="loadbtn__loadBtn--button" id="loadMoreButton">
+                  Load more
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <div>
-        
-      </div>
+      <div></div>
     </main>
-     
+    <footer class="footer">
+      <div class="footer__main container">
+        <div class="footer__section footer__section--account">
+          <h2 class="footer__heading">Account</h2>
+          <ul class="footer__list">
+            <li><a href="#" class="footer__link">Sign In</a></li>
+            <li><a href="#" class="footer__link">Register</a></li>
+            <li><a href="#" class="footer__link">Order Status</a></li>
+          </ul>
+        </div>
+        <div class="footer__section footer__section--about">
+          <h2 class="footer__heading">About Us</h2>
+          <ul class="footer__list">
+            <li><a href="#" class="footer__link">Our Story</a></li>
+            <li><a href="#" class="footer__link">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section footer__section--help">
+          <h2 class="footer__heading">Help</h2>
+          <ul class="footer__list">
+            <li><a href="#" class="footer__link">Contact Us</a></li>
+            <li><a href="#" class="footer__link">Order status</a></li>
+            <li><a href="#" class="footer__link">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer__section footer__section--follow">
+          <h2 class="footer__heading">Follow Us</h2>
+          <ul class="footer__list">
+            <li><a href="#" class="footer__link">Facebook</a></li>
+            <li><a href="#" class="footer__link">Instagram</a></li>
+            <li><a href="#" class="footer__link">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>
