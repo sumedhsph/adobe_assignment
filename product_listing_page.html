@@ -9,74 +9,60 @@
     <link rel="stylesheet" href="css/shimmer.css" />
   </head>
   <body>
-    <header id="header">
+    <header id="header" role="banner">
       <div class="mainheader container">
         <div class="mainheader__bar">
-          <button id="navbar-toggle">&#9776;</button>
+          <button id="navbar-toggle" aria-label="Toggle navigation">&#9776;</button>
         </div>
         <div class="mainheader__logo">
           <a href="#"><img src="images/logo.png" alt="Venia Logo" /></a>
         </div>
-        <nav id="navbar" >
+        <nav id="navbar" role="navigation" aria-label="Main Navigation">
           <ul class="mainheader__navbar">
-            <li><a href="#" title="home">home</a></li>
+            <li><a href="#" title="home">Home</a></li>
             <li><a href="#" title="women">Women</a></li>
             <li><a href="#" title="men">Men</a></li>
-            <li><a href="#" title="smart gear">smart gear</a></li>
+            <li><a href="#" title="smart gear">Smart Gear</a></li>
             <li><a href="#" title="Accessories">Accessories</a></li>
           </ul>
         </nav>
-        <div class="mainheader__cart">cart</div>
+        <div class="mainheader__cart" aria-label="Shopping Cart">Cart</div>
       </div>
-      
     </header>
 
-    <main>
+    <main role="main">
       <section class="banner">
-        <div class="banner__heading page__h1"><h1>men's outerwear</h1></div>
+        <div class="banner__heading page__h1"><h1>Men's Outerwear</h1></div>
         <div class="banner_image">
           <picture>
-            <source
-              srcset="images/banner1-small.webp"
-              media="(max-width: 768px)"
-            />
+            <source srcset="images/banner1-small.webp" media="(max-width: 768px)" />
             <source srcset="images/banner1.webp" media="(min-width: 769px)" />
-            <img
-              src="images/banner1.webp"
-              alt="Image representing Men's outerwear"
-            />
+            <img src="images/banner1.webp" alt="Image representing Men's outerwear" />
           </picture>
         </div>
       </section>
 
       <section class="product__section container">
         <div class="productdisplay">
-          <aside class="productdisplay__aside">
-            <div class="productdisplay__breadcrumbs">
-              <a href="#" class="productdisplay__links" title="clothing"
-                >clothing</a
-              >
-              /
-              <a href="#" class="productdisplay__links" title="men's's"
-                >men's's</a
-              >
-              /
-              <a href="#" class="productdisplay__links--active" title="Outwear"
-                >Outwear</a
-              >
-            </div>
+          <aside class="productdisplay__aside" aria-label="Filters and Categories">
+            <nav class="productdisplay__breadcrumbs" aria-label="Breadcrumb">
+              <a href="#" class="productdisplay__links" title="clothing">Clothing</a> /
+              <a href="#" class="productdisplay__links" title="men's">Men's</a> /
+              <a href="#" class="productdisplay__links--active" title="Outerwear">Outerwear</a>
+            </nav>
             <div class="productdisplay__filter">
-              <div class="productdisplay__filter--label">Filters</div>
+              <label for="search" class="productdisplay__filter--label">Filters</label>
               <div class="productdisplay__search">
                 <input
                   type="text"
                   id="search"
-                  placeholder="search"
+                  placeholder="Search"
                   aria-label="Search products"
                 />
                 <button
                   id="searchButton"
                   class="productdisplay__search--button"
+                  aria-label="Search button"
                 >
                   Search
                 </button>
@@ -91,17 +77,18 @@
                 <span id="productCounts">0</span> Results
               </div>
               <div class="productdisplay__products--sort">
+                <label for="sort" class="productdisplay__sort--label">Sort by</label>
                 <select id="sort" title="sort products">
                   <option value="lowToHigh">Price: Low to High</option>
-                  <option value="highToLow">Price: Hight to Low</option>
+                  <option value="highToLow">Price: High to Low</option>
                 </select>
               </div>
             </div>
             <div class="productgrid">
-              <section id="products">
+              <section id="products" aria-label="Product Listings">
                 <!-- Products will be dynamically inserted here -->
               </section>
-              <div id="loading">
+              <div id="loading" aria-busy="true">
                 <div class="loading__card">
                   <div class="shimmerBG media"></div>
                   <div class="p-32">
@@ -116,7 +103,7 @@
                 </div>
               </div>
               <div class="loadbtn">
-                <button class="loadbtn__loadBtn--button" id="loadMoreButton">
+                <button class="loadbtn__loadBtn--button" id="loadMoreButton" aria-label="Load more products">
                   Load more
                 </button>
               </div>
@@ -124,9 +111,9 @@
           </div>
         </div>
       </section>
-      <div></div>
     </main>
-    <footer class="footer">
+
+    <footer class="footer" role="contentinfo">
       <div class="footer__main container">
         <div class="footer__section footer__section--account">
           <h2 class="footer__heading">Account</h2>
@@ -147,7 +134,7 @@
           <h2 class="footer__heading">Help</h2>
           <ul class="footer__list">
             <li><a href="#" class="footer__link">Contact Us</a></li>
-            <li><a href="#" class="footer__link">Order status</a></li>
+            <li><a href="#" class="footer__link">Order Status</a></li>
             <li><a href="#" class="footer__link">Returns</a></li>
           </ul>
         </div>
@@ -160,7 +147,7 @@
           </ul>
         </div>
       </div>
-      <div class="footer_copyright container">
+      <div class="footer__copyright container">
         <div class="footer__logo">VENIA</div>
         <div class="footer__txt">&copy; Company Name Address Ave, City Name, State ZIP</div>
       </div>
