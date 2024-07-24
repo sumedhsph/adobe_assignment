@@ -131,7 +131,7 @@ header input {
 .banner_image {
   width: 100%;
   max-width: 85.313rem;
-  padding-top: 1%;
+  padding-top: 0.8%;
 }
 .banner__heading h1 {
   max-width: 50%;
