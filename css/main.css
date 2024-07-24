@@ -435,4 +435,17 @@ header input {
     order: 2;
     margin-top: 1.25rem;
   }
+  .productdisplay__filter{
+    margin-bottom: 1.25rem;
+  }
+  .productdisplay__aside{
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media  (min-width: 320px) {
+  .banner__heading h1 {
+    max-width: 75%;
+  }
 }
