@@ -9,8 +9,7 @@ const itemsPerPage = 12;
 let loading = false; // To prevent multiple API calls
 const loadingDiv = document.getElementById("loading");
 
-
-// responsive navbar
+// Responsive navbar
 document.getElementById('navbar-toggle').addEventListener('click', function() {
   var navbar = document.getElementById('navbar');
   if (navbar.style.display === 'block') {
@@ -19,8 +18,6 @@ document.getElementById('navbar-toggle').addEventListener('click', function() {
     navbar.style.display = 'block';
   }
 });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllProducts();
@@ -53,9 +50,11 @@ async function fetchAllProducts() {
   }
 }
 
-function displayProducts(products) {
+function displayProducts(products, append = false) {
   const productsContainer = document.getElementById("products");
-  productsContainer.innerHTML = ""; // Clear existing products
+  if (!append) {
+    productsContainer.innerHTML = ""; // Clear existing products only if append is false
+  }
 
   products.forEach((product) => {
     const productElement = document.createElement("div");
@@ -68,7 +67,7 @@ function displayProducts(products) {
     productsContainer.appendChild(productElement);
   });
 
-  displayedProducts = products; // Update the displayed products
+  displayedProducts = append ? [...displayedProducts, ...products] : products; // Update the displayed products
 
   // Update the product count
   updateProductCount();
@@ -131,7 +130,6 @@ function filterProductsByCategory() {
   }
 
   currentPage = 1; // Reset to first page
-  document.getElementById("products").innerHTML = ""; // Clear existing products
   displayProducts(filteredProducts.slice(0, itemsPerPage));
   updateLoadMoreButton(); // Update Load More button visibility
 }
@@ -150,7 +148,6 @@ function setupEventListeners() {
     }
 
     currentPage = 1; // Reset to first page
-    document.getElementById("products").innerHTML = ""; // Clear existing products
     displayProducts(sortedProducts.slice(0, itemsPerPage));
     updateLoadMoreButton(); // Update Load More button visibility
   });
@@ -165,7 +162,6 @@ function setupEventListeners() {
     );
     filteredProducts = searchResult; // Update the filteredProducts
     currentPage = 1; // Reset to first page
-    document.getElementById("products").innerHTML = ""; // Clear existing products
     displayProducts(searchResult.slice(0, itemsPerPage));
     updateLoadMoreButton(); // Update Load More button visibility
   });
@@ -175,7 +171,7 @@ function setupEventListeners() {
   loadMoreButton.addEventListener("click", () => {
     if (!loading) {
       const nextProducts = filteredProducts.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
-      displayProducts(nextProducts);
+      displayProducts(nextProducts, true); // Append new products
       currentPage++;
       updateLoadMoreButton(); // Update Load More button visibility
     }
@@ -227,4 +223,3 @@ function updateProductCount() {
     productCounts.textContent = displayedProducts.length;
   }
 }
-
